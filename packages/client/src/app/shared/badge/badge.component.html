@@ -1,0 +1,10 @@
+<span
+  [ngClass]="[
+    'badge-bg-' + backgroundColor,
+    'badge-border-' + borderColor,
+    'badge-txt-' + textColor
+  ]"
+  [class.badge-border-dashed]="isBorderDashed"
+>
+  {{ name }}
+</span>

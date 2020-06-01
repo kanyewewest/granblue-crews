@@ -16,6 +16,7 @@
 
 :root {
   --space-0: 0;
+  --space-02: 0.2rem;
   --space-05: 0.5rem;
   --space-1: 1rem;
   --space-2: 2rem;
@@ -30,6 +31,16 @@
   --font-size-5: 1.4rem;
   --font-size-6: 1.2rem;
   --font-size-base: 1.2rem;
+  --border-radius-08: 0.8rem;
+  --color-red: #d9435f;
+  --color-blue: #3f76b5;
+  --color-brown: #795548;
+  --color-green: #49bf8a;
+  --color-yellow: #f2cb07;
+  --color-purple: hsla(262, 30%, 34%, 1);
+  --color-silver: hsl(233, 5%, 60%);
+  --color-white: #fff;
+  --color-black: #06080d;
 
   // Dark theme by default
   @include theme-dark;

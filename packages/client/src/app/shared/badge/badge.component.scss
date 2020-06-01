@@ -1,0 +1,44 @@
+span {
+  padding: var(--space-02) var(--space-1);
+  display: inline-block;
+  border-radius: var(--border-radius-08);
+}
+$badge-bg-colors: 'black', 'red', 'blue', 'brown', 'green', 'yellow', 'purple',
+  'silver';
+$badge-txt-colors: 'white', 'black', 'gold', 'silver';
+
+.badge-border {
+  @each $color in $badge-bg-colors {
+    &-#{$color} {
+      border: 2px solid var(--color-#{$color});
+    }
+  }
+  &-dashed {
+    border-style: dashed !important;
+  }
+  &-default {
+    border: 2px solid transparent;
+  }
+}
+
+.badge-bg {
+  @each $color in $badge-bg-colors {
+    &-#{$color} {
+      background-color: var(--color-#{$color});
+    }
+  }
+  &-default {
+    background-color: none;
+  }
+}
+
+.badge-txt {
+  @each $color in $badge-txt-colors {
+    &-#{$color} {
+      color: var(--color-#{$color});
+    }
+  }
+  &-default {
+    color: var(--color-txt-main);
+  }
+}
