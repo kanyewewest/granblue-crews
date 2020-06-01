@@ -1,0 +1,10 @@
+<div class="fx-row-wrapper">
+  <ul class="fx-row-parent fx-row-space-1">
+    <li class="fx-row-child" *ngFor="let emoji of emojis; let i = index">
+      <div class="emoji-pick" (click)="voteEmoji(i)">
+        <p>{{ emoji.votes }}</p>
+        <div class="emoji-wrapper" [innerHTML]="emoji.unicode | emoji"></div>
+      </div>
+    </li>
+  </ul>
+</div>

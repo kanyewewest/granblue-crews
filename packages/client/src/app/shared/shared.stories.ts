@@ -15,6 +15,8 @@ import {
 } from './badge/badge.interface';
 import { CardComponent } from './card/card.component';
 import { mockCard } from './card/card.interface';
+import { EmojiPickerComponent } from './emoji-picker/emoji-picker.component';
+import { mockEmojiPicks } from './emoji-picker/emoji-picker.interface';
 
 const shared = storiesOf('Shared', module).addDecorator(
   moduleMetadata({
@@ -74,10 +76,20 @@ shared.add('Card', () => {
   return {
     component: CardComponent,
     props: {
+      emojis: object('emojis', mockCard.emojis),
       avatarSrc: text('avatarSrc', mockCard.avatarSrc),
       title: text('title', mockCard.title),
       description: text('description', mockCard.description),
       badges: object('badges', mockCard.badges),
+    },
+  };
+});
+
+shared.add('Emoji Picker', () => {
+  return {
+    component: EmojiPickerComponent,
+    props: {
+      emojis: object('emojis', mockEmojiPicks),
     },
   };
 });

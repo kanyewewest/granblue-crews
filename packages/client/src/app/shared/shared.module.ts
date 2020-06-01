@@ -6,6 +6,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
 import { BadgeComponent } from './badge/badge.component';
 import { CardComponent } from './card/card.component';
+import { EmojiPickerComponent } from './emoji-picker/emoji-picker.component';
+import { EmojiPipe } from './pipes/emoji.pipe';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { CardComponent } from './card/card.component';
     LayoutComponent,
     BadgeComponent,
     CardComponent,
+    EmojiPickerComponent,
+    EmojiPipe,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -22,6 +26,8 @@ import { CardComponent } from './card/card.component';
     LayoutComponent,
     BadgeComponent,
     CardComponent,
+    EmojiPickerComponent,
+    EmojiPipe,
   ],
 })
 export class SharedModule {}

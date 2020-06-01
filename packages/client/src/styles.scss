@@ -45,6 +45,8 @@ a {
   // Not particularly needed, remove if the output is getting too bloated
   @each $txt, $val in variables.$space-sizes {
     > .fx-row-parent.fx-row-space-#{$txt} {
+      display: flex;
+      flex-flow: row wrap;
       margin-right: -$val;
       margin-bottom: -$val;
       > .fx-row-child {
@@ -53,4 +55,11 @@ a {
       }
     }
   }
+}
+
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
 }
