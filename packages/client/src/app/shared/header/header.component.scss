@@ -1,0 +1,28 @@
+@import 'src/styles/_imports';
+
+nav {
+  background-color: var(--color-bg-sub);
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    padding: 0 var(--space-05);
+    li {
+      height: 5rem;
+      padding: var(--space-0) var(--space-1);
+      font-size: var(--font-size-4);
+      display: flex;
+      align-items: center;
+    }
+    li.logo {
+      padding: var(--space-1) var(--space-05);
+      margin-right: var(--space-1);
+      line-height: 0;
+      img {
+        width: auto;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
+}

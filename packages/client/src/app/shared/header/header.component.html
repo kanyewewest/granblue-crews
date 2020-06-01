@@ -1,0 +1,14 @@
+<nav>
+  <ul>
+    <a [routerLink]="['/']">
+      <li class="logo">
+        <img src="./assets/logo.png" />
+      </li>
+    </a>
+    <li *ngFor="let item of navItems">
+      <a [routerLink]="[item.url]">
+        <span>{{ item.name }}</span>
+      </a>
+    </li>
+  </ul>
+</nav>
