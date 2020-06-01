@@ -1,11 +1,13 @@
+$badge-bg-colors: 'black', 'red', 'blue', 'brown', 'green', 'yellow', 'purple',
+  'silver';
+$badge-txt-colors: 'white', 'black', 'gold', 'silver';
+
 span {
   padding: var(--space-02) var(--space-1);
   display: inline-block;
   border-radius: var(--border-radius-08);
+  font-size: var(--font-size-6);
 }
-$badge-bg-colors: 'black', 'red', 'blue', 'brown', 'green', 'yellow', 'purple',
-  'silver';
-$badge-txt-colors: 'white', 'black', 'gold', 'silver';
 
 .badge-border {
   @each $color in $badge-bg-colors {
