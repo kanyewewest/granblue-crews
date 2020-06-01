@@ -1,0 +1,28 @@
+article {
+  text-align: center;
+  font-size: var(--font-size-5);
+  background-color: var(--color-bg-sub);
+  border-radius: var(--border-radius-08);
+  padding: var(--space-1) var(--space-2);
+
+  > * {
+    padding: var(--space-1) var(--space-0);
+  }
+
+  .avatar {
+    height: 10rem;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: var(--font-size-4);
+  }
+
+  footer {
+    text-align: left;
+
+    .fx-row-child {
+      display: inline-block;
+    }
+  }
+}

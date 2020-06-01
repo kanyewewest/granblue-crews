@@ -1,0 +1,14 @@
+<article class="fx-row-wrapper">
+  <div class="img-content avatar">
+    <img class="img-round" [src]="avatarSrc" />
+  </div>
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+  <footer class="fx-row-parent fx-row-space-05">
+    <app-badge
+      class="fx-row-child"
+      *ngFor="let badge of badges"
+      [badge]="badge"
+    ></app-badge>
+  </footer>
+</article>

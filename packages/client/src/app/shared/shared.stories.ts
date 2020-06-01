@@ -13,6 +13,8 @@ import {
   BadgeBackgroundColor,
   BadgeTextColor,
 } from './badge/badge.interface';
+import { CardComponent } from './card/card.component';
+import { mockCard } from './card/card.interface';
 
 const shared = storiesOf('Shared', module).addDecorator(
   moduleMetadata({
@@ -64,6 +66,18 @@ shared.add('Badge', () => {
         mockBadge.textColor,
       ),
       isBorderDashed: boolean('isBorderDashed', mockBadge.isBorderDashed),
+    },
+  };
+});
+
+shared.add('Card', () => {
+  return {
+    component: CardComponent,
+    props: {
+      avatarSrc: text('avatarSrc', mockCard.avatarSrc),
+      title: text('title', mockCard.title),
+      description: text('description', mockCard.description),
+      badges: object('badges', mockCard.badges),
     },
   };
 });
