@@ -5,10 +5,12 @@ import { mockHeaderNavItems } from './header/header.interface';
 import { APP_BASE_HREF } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FooterComponent } from './footer/footer.component';
+import { LayoutComponent } from './layout/layout.component';
+import { SharedModule } from './shared.module';
 
 const shared = storiesOf('Shared', module).addDecorator(
   moduleMetadata({
-    imports: [RouterTestingModule],
+    imports: [RouterTestingModule, SharedModule],
     providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   }),
 );
@@ -25,5 +27,11 @@ shared.add('Header', () => {
 shared.add('Footer', () => {
   return {
     component: FooterComponent,
+  };
+});
+
+shared.add('Layout', () => {
+  return {
+    component: LayoutComponent,
   };
 });
