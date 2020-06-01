@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { mockHeaderNavItems } from './header/header.interface';
 import { APP_BASE_HREF } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
+import { FooterComponent } from './footer/footer.component';
 
 const shared = storiesOf('Shared', module).addDecorator(
   moduleMetadata({
@@ -18,5 +19,11 @@ shared.add('Header', () => {
     props: {
       navItems: object('navItems', mockHeaderNavItems),
     },
+  };
+});
+
+shared.add('Footer', () => {
+  return {
+    component: FooterComponent,
   };
 });
