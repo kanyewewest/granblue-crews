@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/_reset';
+@import './styles/_themes';
+
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: var(--font-size-base);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  text-rendering: optimizelegibility;
+  font-feature-settings: 'kern';
+  color: var(--color-txt-main);
+  background-color: var(--color-bg-main);
+}
+
+a {
+  color: var(--color-txt-main);
+  text-decoration: none;
+}
