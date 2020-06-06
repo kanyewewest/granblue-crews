@@ -3,7 +3,7 @@
 app-card {
   display: block;
   --card-margin: var(--space-2);
-  margin: var(--space-0) calc(var(--card-margin) / 2);
+  margin: calc(var(--card-margin) / 2);
   margin-bottom: var(--space-4);
 }
 
