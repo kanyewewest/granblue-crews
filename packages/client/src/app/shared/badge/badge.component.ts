@@ -7,15 +7,16 @@ import { BadgeBackgroundColor, BadgeTextColor, Badge } from '@gbc/models/badge';
   styleUrls: ['./badge.component.scss'],
 })
 export class BadgeComponent {
-  @Input() name = '';
-  @Input() description = '';
-  @Input() backgroundColor = BadgeBackgroundColor.BLUE;
-  @Input() borderColor = BadgeBackgroundColor.BLUE;
-  @Input() textColor = BadgeTextColor.WHITE;
-  @Input() isBorderDashed = false;
+  @Input() name: Badge['name'] = '';
+  @Input() description: Badge['description'] = '';
+  @Input() backgroundColor: Badge['backgroundColor'] =
+    BadgeBackgroundColor.BLUE;
+  @Input() borderColor: Badge['borderColor'] = BadgeBackgroundColor.BLUE;
+  @Input() textColor: Badge['textColor'] = BadgeTextColor.WHITE;
+  @Input() isBorderDashed: Badge['isBorderDashed'] = false;
 
   // Use either this setter or the inputs above
-  @Input() set badge(val: Badge) {
+  @Input() set config(val: Badge) {
     this.name = val.name;
     this.description = val.description;
     this.backgroundColor = val.backgroundColor;
