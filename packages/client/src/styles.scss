@@ -30,6 +30,30 @@ a {
   text-decoration: none;
 }
 
+.fx-row-wrapper {
+  overflow: hidden;
+  > .fx-row-parent {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+// Not particularly needed (for every space size)
+// define an array for each if the output is getting too bloated
+@each $txt, $val in variables.$space-sizes {
+  .fx-row-wrapper > .fx-row-space-#{$txt} {
+    margin-right: -$val;
+    margin-bottom: -$val;
+    > .fx-row-child {
+      padding-right: $val;
+      padding-bottom: $val;
+    }
+  }
+
+  .gutter-vertical-#{$txt} > * + * {
+    margin-top: var(--space-#{$txt});
+  }
+}
+
 .img-content {
   line-height: 0;
 }
@@ -37,24 +61,6 @@ a {
   width: auto;
   height: 100%;
   border-radius: 50%;
-}
-
-.fx-row-wrapper {
-  overflow: hidden;
-
-  // Not particularly needed, remove if the output is getting too bloated
-  @each $txt, $val in variables.$space-sizes {
-    > .fx-row-parent.fx-row-space-#{$txt} {
-      display: flex;
-      flex-flow: row wrap;
-      margin-right: -$val;
-      margin-bottom: -$val;
-      > .fx-row-child {
-        padding-right: $val;
-        padding-bottom: $val;
-      }
-    }
-  }
 }
 
 img.emoji {
