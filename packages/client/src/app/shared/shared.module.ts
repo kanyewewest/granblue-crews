@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './layout/header.component';
@@ -9,6 +10,7 @@ import { CardComponent } from './card/card.component';
 import { EmojiPickerComponent } from './emoji-picker/emoji-picker.component';
 import { EmojiPipe } from './pipes/emoji.pipe';
 import { CardListComponent } from './card/card-list.component';
+import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +22,9 @@ import { CardListComponent } from './card/card-list.component';
     EmojiPickerComponent,
     EmojiPipe,
     CardListComponent,
+    InfiniteScrollComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, HttpClientModule, RouterModule],
   exports: [
     LayoutComponent,
     BadgeComponent,
