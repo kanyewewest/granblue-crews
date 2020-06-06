@@ -2,12 +2,13 @@ import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { object, text, select, boolean } from '@storybook/addon-knobs';
 import { APP_BASE_HREF } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './layout/footer.component';
 import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from './shared.module';
 import { BadgeComponent } from './badge/badge.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './layout/header.component';
 import { CardComponent } from './card/card.component';
+import { CardListComponent } from './card/card-list.component';
 import { EmojiPickerComponent } from './emoji-picker/emoji-picker.component';
 
 import { BadgeBackgroundColor, BadgeTextColor } from '@gbc/models/badge';
@@ -80,6 +81,15 @@ shared.add('Card', () => {
       title: text('title', mockCard[0].title),
       description: text('description', mockCard[0].description),
       badges: object('badges', mockCard[0].badges),
+    },
+  };
+});
+
+shared.add('Card List', () => {
+  return {
+    component: CardListComponent,
+    props: {
+      cards: object('cards', mockCard),
     },
   };
 });
