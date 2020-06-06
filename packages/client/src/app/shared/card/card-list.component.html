@@ -1,3 +1,5 @@
-<div class="card-list">
-  <app-card *ngFor="let card of cards" [config]="card"></app-card>
-</div>
+<app-infinite-scroll>
+  <div class="card-list">
+    <app-card *ngFor="let card of cards" [config]="card"></app-card>
+  </div>
+</app-infinite-scroll>

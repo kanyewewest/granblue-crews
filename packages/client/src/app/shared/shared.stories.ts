@@ -17,11 +17,16 @@ import mockBadge from '@gbc/server-test/mockups/badge';
 import mockCard from '@gbc/server-test/mockups/card';
 import mockEmojiPicks from '@gbc/server-test/mockups/emoji-pick';
 import mockHeaderNavItems from '@gbc/server-test/mockups/header';
+import { CardService } from '../core/services/card.service';
+import { TestCardService } from '../core/services/card.service.test';
 
 const shared = storiesOf('Shared', module).addDecorator(
   moduleMetadata({
     imports: [RouterTestingModule, SharedModule],
-    providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+    providers: [
+      { provide: APP_BASE_HREF, useValue: '/' },
+      { provide: CardService, useExisting: TestCardService },
+    ],
   }),
 );
 
@@ -88,9 +93,6 @@ shared.add('Card', () => {
 shared.add('Card List', () => {
   return {
     component: CardListComponent,
-    props: {
-      cards: object('cards', mockCard),
-    },
   };
 });
 
