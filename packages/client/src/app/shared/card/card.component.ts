@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Badge } from '../badge/badge.interface';
-import { EmojiPick } from '../emoji-picker/emoji-picker.interface';
+import { Badge } from '@gbc/models/badge';
+import { EmojiPick } from '@gbc/models/emoji-pick';
 
 @Component({
   selector: 'app-card',

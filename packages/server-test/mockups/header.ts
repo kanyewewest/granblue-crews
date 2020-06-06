@@ -1,9 +1,6 @@
-export interface HeaderNavItem {
-  name: string;
-  url: string;
-}
+import { HeaderNavItem } from '@gbc/models/header';
 
-export const mockHeaderNavItems: HeaderNavItem[] = [
+const mock: HeaderNavItem[] = [
   {
     name: 'Google',
     url: 'https://google.com',
@@ -17,3 +14,5 @@ export const mockHeaderNavItems: HeaderNavItem[] = [
     url: 'https://gitlab.com',
   },
 ];
+
+export default mock;

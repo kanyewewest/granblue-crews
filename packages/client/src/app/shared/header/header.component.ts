@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { HeaderNavItem } from './header.interface';
+import { HeaderNavItem } from '@gbc/models/header';
 
 @Component({
   selector: 'app-header',

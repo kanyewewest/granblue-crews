@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { BadgeBackgroundColor, BadgeTextColor, Badge } from './badge.interface';
+import { BadgeBackgroundColor, BadgeTextColor, Badge } from '@gbc/models/badge';
 
 @Component({
   selector: 'app-badge',

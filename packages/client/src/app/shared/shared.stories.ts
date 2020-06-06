@@ -1,22 +1,21 @@
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { object, text, select, boolean } from '@storybook/addon-knobs';
-import { HeaderComponent } from './header/header.component';
-import { mockHeaderNavItems } from './header/header.interface';
 import { APP_BASE_HREF } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FooterComponent } from './footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from './shared.module';
 import { BadgeComponent } from './badge/badge.component';
-import {
-  mockBadge,
-  BadgeBackgroundColor,
-  BadgeTextColor,
-} from './badge/badge.interface';
+import { HeaderComponent } from './header/header.component';
 import { CardComponent } from './card/card.component';
-import { mockCard } from './card/card.interface';
 import { EmojiPickerComponent } from './emoji-picker/emoji-picker.component';
-import { mockEmojiPicks } from './emoji-picker/emoji-picker.interface';
+
+import { BadgeBackgroundColor, BadgeTextColor } from '@gbc/models/badge';
+
+import mockBadge from '@gbc/server-test/mockups/badge';
+import mockCard from '@gbc/server-test/mockups/card';
+import mockEmojiPicks from '@gbc/server-test/mockups/emoji-pick';
+import mockHeaderNavItems from '@gbc/server-test/mockups/header';
 
 const shared = storiesOf('Shared', module).addDecorator(
   moduleMetadata({
@@ -50,24 +49,24 @@ shared.add('Badge', () => {
   return {
     component: BadgeComponent,
     props: {
-      name: text('name', mockBadge.name),
-      description: text('description', mockBadge.description),
+      name: text('name', mockBadge[0].name),
+      description: text('description', mockBadge[0].description),
       backgroundColor: select(
         'backgroundColor',
         Object.values(BadgeBackgroundColor),
-        mockBadge.backgroundColor,
+        mockBadge[0].backgroundColor,
       ),
       borderColor: select(
         'borderColor',
         Object.values(BadgeBackgroundColor),
-        mockBadge.borderColor,
+        mockBadge[0].borderColor,
       ),
       textColor: select(
         'textColor',
         Object.values(BadgeTextColor),
-        mockBadge.textColor,
+        mockBadge[0].textColor,
       ),
-      isBorderDashed: boolean('isBorderDashed', mockBadge.isBorderDashed),
+      isBorderDashed: boolean('isBorderDashed', mockBadge[0].isBorderDashed),
     },
   };
 });
@@ -76,11 +75,11 @@ shared.add('Card', () => {
   return {
     component: CardComponent,
     props: {
-      emojis: object('emojis', mockCard.emojis),
-      avatarSrc: text('avatarSrc', mockCard.avatarSrc),
-      title: text('title', mockCard.title),
-      description: text('description', mockCard.description),
-      badges: object('badges', mockCard.badges),
+      emojis: object('emojis', mockCard[0].emojis),
+      avatarSrc: text('avatarSrc', mockCard[0].avatarSrc),
+      title: text('title', mockCard[0].title),
+      description: text('description', mockCard[0].description),
+      badges: object('badges', mockCard[0].badges),
     },
   };
 });

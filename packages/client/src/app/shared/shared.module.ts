@@ -21,8 +21,6 @@ import { EmojiPipe } from './pipes/emoji.pipe';
   ],
   imports: [CommonModule, RouterModule],
   exports: [
-    HeaderComponent,
-    FooterComponent,
     LayoutComponent,
     BadgeComponent,
     CardComponent,

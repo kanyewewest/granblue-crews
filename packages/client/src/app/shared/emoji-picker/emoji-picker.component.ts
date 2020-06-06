@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { EmojiPick } from './emoji-picker.interface';
+import { EmojiPick } from '@gbc/models/emoji-pick';
 
 @Component({
   selector: 'app-emoji-picker',
