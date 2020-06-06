@@ -28,6 +28,7 @@
     --color-#{$txt}: #{$val};
   }
   --border-radius-08: 0.8rem;
+  --app-max-width: 120rem;
 
   // Set dark theme as default
   @include theme-dark;

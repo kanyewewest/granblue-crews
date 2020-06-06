@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div>
-    <app-header></app-header>
-    <router-outlet></router-outlet>
+    <app-header [navItems]="navItems"></app-header>
+    <ng-content></ng-content>
   </div>
   <app-footer></app-footer>
 </div>

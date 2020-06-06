@@ -54,6 +54,12 @@ a {
   }
 }
 
+.contain {
+  max-width: var(--app-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .img-content {
   line-height: 0;
 }
