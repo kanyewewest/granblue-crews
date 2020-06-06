@@ -1,0 +1,30 @@
+@use '~src/styles/variables';
+
+app-card {
+  display: block;
+  --card-margin: var(--space-2);
+  margin: var(--space-0) calc(var(--card-margin) / 2);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: variables.$break-sm) {
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    --n-cards-row: 2;
+    app-card {
+      margin-top: 0;
+      width: calc(100% / var(--n-cards-row) - var(--card-margin) - 0.01px);
+    }
+  }
+}
+@media (min-width: variables.$break-md) {
+  .card-list {
+    --n-cards-row: 3;
+  }
+}
+@media (min-width: variables.$break-lg) {
+  .card-list {
+    --n-cards-row: 4;
+  }
+}
