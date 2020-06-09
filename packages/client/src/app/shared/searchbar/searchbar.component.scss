@@ -1,0 +1,24 @@
+.searchbar-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  background-color: var(--color-bg-sub);
+  border-radius: var(--border-radius-08);
+  padding: var(--space-1);
+  app-icon-search {
+    margin-right: var(--space-05);
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+    color: var(--color-txt-main);
+    font-size: var(--font-size-4);
+    outline: none;
+    flex-grow: 1;
+
+    &::placeholder {
+      color: var(--color-txt-sub);
+    }
+  }
+}
