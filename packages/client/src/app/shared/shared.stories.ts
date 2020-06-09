@@ -19,6 +19,7 @@ import mockEmojiPicks from '@gbc/server-test/mockups/emoji-pick';
 import mockHeaderNavItems from '@gbc/server-test/mockups/header';
 import { CardService } from '../core/services/card.service';
 import { TestCardService } from '../core/services/card.service.test';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 import { IconSearchComponent } from './icon-search/icon-search.component';
 
 const shared = storiesOf('Shared', module).addDecorator(
@@ -103,6 +104,12 @@ shared.add('Emoji Picker', () => {
     props: {
       emojis: object('emojis', mockEmojiPicks),
     },
+  };
+});
+
+shared.add('Searchbar', () => {
+  return {
+    component: SearchbarComponent,
   };
 });
 

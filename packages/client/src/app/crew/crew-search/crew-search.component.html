@@ -1,1 +1,9 @@
-<app-card-list></app-card-list>
+<div class="gutter-vertical-2">
+  <header>
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+      <app-searchbar formControlName="search"></app-searchbar>
+      <button type="submit" hidden></button>
+    </form>
+  </header>
+  <app-card-list></app-card-list>
+</div>

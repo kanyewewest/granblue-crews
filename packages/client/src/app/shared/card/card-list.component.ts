@@ -16,21 +16,33 @@ export class CardListComponent implements OnDestroy, OnInit {
   cards: Card[] = [];
   page = 0;
 
-  subscription: Subscription;
+  subscriptions: Subscription[] = [];
 
   constructor(
     private infiniteScrollService: InfiniteScrollService,
     private cardService: CardService,
   ) {}
   ngOnInit(): void {
-    this.subscription = this.infiniteScrollService
-      .filteredReachedBottom$(InfiniteScrollStatus.OBSERVING)
-      .subscribe(() => this.nextPage());
+    this.subscriptions.push(
+      this.infiniteScrollService
+        .filteredReachedBottom$(InfiniteScrollStatus.OBSERVING)
+        .subscribe(() => this.nextPage()),
+    );
     this.infiniteScrollService.status = InfiniteScrollStatus.OBSERVING;
+
+    this.subscriptions.push(
+      this.cardService.search$.subscribe(() => {
+        this.page = 0;
+        this.cards = [];
+        this.infiniteScrollService.status = InfiniteScrollStatus.OBSERVING;
+      }),
+    );
   }
 
   ngOnDestroy(): void {
-    if (this.subscription) this.subscription.unsubscribe();
+    this.subscriptions.forEach(sub => {
+      if (sub) sub.unsubscribe();
+    });
   }
 
   nextPage() {

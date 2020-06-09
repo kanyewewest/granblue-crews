@@ -16,7 +16,6 @@ export class InfiniteScrollService {
   }
 
   reachedBottom() {
-    console.log(this.status, 'REACHED-BOTTOM');
     this.reachedBottomSubject.next(this.status);
     this.status = InfiniteScrollStatus.UPDATING;
   }

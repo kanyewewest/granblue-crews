@@ -12,6 +12,7 @@ import { EmojiPipe } from './pipes/emoji.pipe';
 import { CardListComponent } from './card/card-list.component';
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 import { IconSearchComponent } from './icon-search/icon-search.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { IconSearchComponent } from './icon-search/icon-search.component';
     CardListComponent,
     InfiniteScrollComponent,
     IconSearchComponent,
+    SearchbarComponent,
   ],
   imports: [CommonModule, HttpClientModule, RouterModule],
   exports: [
@@ -34,6 +36,7 @@ import { IconSearchComponent } from './icon-search/icon-search.component';
     CardListComponent,
     EmojiPickerComponent,
     EmojiPipe,
+    SearchbarComponent,
   ],
 })
 export class SharedModule {}

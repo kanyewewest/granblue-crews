@@ -9,13 +9,16 @@ import { Paginated } from '@gbc/models/pagination';
 @Injectable({
   providedIn: 'root',
 })
-export class TestCardService implements CardService {
-  constructor(private api: ApiService) {}
+export class TestCardService extends CardService {
+  constructor(private api: ApiService) {
+    super();
+  }
 
-  getCards(_page: number, _limit = 3): Observable<Paginated<Card>> {
+  getCards = (_page: number, _limit = 4): Observable<Paginated<Card>> => {
     const params = this.api.createHttpParams({
       _page,
       _limit,
+      ...this.filters,
     });
     return this.api.get(`/card`, params).pipe(
       map(cards => {
@@ -27,5 +30,5 @@ export class TestCardService implements CardService {
         return paginatedCard;
       }),
     );
-  }
+  };
 }

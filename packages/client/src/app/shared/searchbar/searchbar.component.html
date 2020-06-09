@@ -1,4 +1,9 @@
 <div class="searchbar-wrapper">
   <app-icon-search></app-icon-search>
-  <input type="text" placeholder="Search" [value]="search" />
+  <input
+    type="text"
+    placeholder="Search"
+    [value]="search"
+    (keyup)="writeValue($event.target.value)"
+  />
 </div>

@@ -27,6 +27,7 @@
   @each $txt, $val in variables.$colors {
     --color-#{$txt}: #{$val};
   }
+  --item-margin: var(--space-2);
   --border-radius-08: 0.8rem;
   --app-max-width: 120rem;
 

@@ -2,8 +2,7 @@
 
 app-card {
   display: block;
-  --card-margin: var(--space-2);
-  margin: calc(var(--card-margin) / 2);
+  margin: calc(var(--item-margin) / 2);
   margin-bottom: var(--space-4);
 }
 
@@ -14,13 +13,8 @@ app-card {
     --n-cards-row: 2;
     app-card {
       margin-top: 0;
-      width: calc(100% / var(--n-cards-row) - var(--card-margin) - 0.01px);
+      width: calc(100% / var(--n-cards-row) - var(--item-margin) - 0.01px);
     }
-  }
-}
-@media (min-width: variables.$break-md) {
-  .card-list {
-    --n-cards-row: 3;
   }
 }
 @media (min-width: variables.$break-lg) {
