@@ -11,6 +11,7 @@ import { EmojiPickerComponent } from './emoji-picker/emoji-picker.component';
 import { EmojiPipe } from './pipes/emoji.pipe';
 import { CardListComponent } from './card/card-list.component';
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
+import { IconSearchComponent } from './icon-search/icon-search.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
     EmojiPipe,
     CardListComponent,
     InfiniteScrollComponent,
+    IconSearchComponent,
   ],
   imports: [CommonModule, HttpClientModule, RouterModule],
   exports: [
