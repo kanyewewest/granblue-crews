@@ -1,47 +1,19 @@
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { object, text, select, boolean } from '@storybook/addon-knobs';
-import { APP_BASE_HREF } from '@angular/common';
-import { RouterTestingModule } from '@angular/router/testing';
-import { FooterComponent } from './layout/footer.component';
-import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from './shared.module';
 import { BadgeComponent } from './badge/badge.component';
-import { HeaderComponent } from './layout/header.component';
 import { EmojiPickerComponent } from './emoji-picker/emoji-picker.component';
 import { BadgeBackgroundColor, BadgeTextColor } from '@gbc/models/badge';
 import mockBadge from '@gbc/server-test/mockups/badge';
 import mockEmojiPicks from '@gbc/server-test/mockups/emoji-pick';
-import mockHeaderNavItems from '@gbc/server-test/mockups/header';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { IconSearchComponent } from './icon-search/icon-search.component';
 
 const shared = storiesOf('Shared', module).addDecorator(
   moduleMetadata({
-    imports: [RouterTestingModule, SharedModule],
-    providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+    imports: [SharedModule],
   }),
 );
-
-shared.add('Header', () => {
-  return {
-    component: HeaderComponent,
-    props: {
-      navItems: object('navItems', mockHeaderNavItems),
-    },
-  };
-});
-
-shared.add('Footer', () => {
-  return {
-    component: FooterComponent,
-  };
-});
-
-shared.add('Layout', () => {
-  return {
-    component: LayoutComponent,
-  };
-});
 
 shared.add('Badge', () => {
   return {
