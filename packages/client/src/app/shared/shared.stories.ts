@@ -10,9 +10,7 @@ import { HeaderComponent } from './layout/header.component';
 import { CardComponent } from './card/card.component';
 import { CardListComponent } from './card/card-list.component';
 import { EmojiPickerComponent } from './emoji-picker/emoji-picker.component';
-
 import { BadgeBackgroundColor, BadgeTextColor } from '@gbc/models/badge';
-
 import mockBadge from '@gbc/server-test/mockups/badge';
 import mockCard from '@gbc/server-test/mockups/card';
 import mockEmojiPicks from '@gbc/server-test/mockups/emoji-pick';
@@ -21,6 +19,7 @@ import { CardService } from '../core/services/card.service';
 import { TestCardService } from '../core/services/card.service.test';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { IconSearchComponent } from './icon-search/icon-search.component';
+import { CardSearchComponent } from './card/card-search.component';
 
 const shared = storiesOf('Shared', module).addDecorator(
   moduleMetadata({
@@ -107,14 +106,20 @@ shared.add('Emoji Picker', () => {
   };
 });
 
+shared.add('Icon Search', () => {
+  return {
+    component: IconSearchComponent,
+  };
+});
+
 shared.add('Searchbar', () => {
   return {
     component: SearchbarComponent,
   };
 });
 
-shared.add('Icon Search', () => {
+shared.add('Card Search', () => {
   return {
-    component: IconSearchComponent,
+    component: CardSearchComponent,
   };
 });

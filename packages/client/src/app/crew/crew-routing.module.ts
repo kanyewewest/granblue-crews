@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CrewComponent } from './crew.component';
-import { CrewSearchComponent } from './crew-search/crew-search.component';
+import { CardSearchComponent } from '../shared/card/card-search.component';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: CrewSearchComponent,
+        component: CardSearchComponent,
       },
     ],
   },

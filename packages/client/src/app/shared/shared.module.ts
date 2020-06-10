@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './layout/header.component';
 import { FooterComponent } from './layout/footer.component';
@@ -13,6 +14,7 @@ import { CardListComponent } from './card/card-list.component';
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 import { IconSearchComponent } from './icon-search/icon-search.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { CardSearchComponent } from './card/card-search.component';
 
 @NgModule({
   declarations: [
@@ -27,16 +29,9 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     InfiniteScrollComponent,
     IconSearchComponent,
     SearchbarComponent,
+    CardSearchComponent,
   ],
-  imports: [CommonModule, HttpClientModule, RouterModule],
-  exports: [
-    LayoutComponent,
-    BadgeComponent,
-    CardComponent,
-    CardListComponent,
-    EmojiPickerComponent,
-    EmojiPipe,
-    SearchbarComponent,
-  ],
+  imports: [CommonModule, HttpClientModule, ReactiveFormsModule, RouterModule],
+  exports: [LayoutComponent, BadgeComponent, CardSearchComponent],
 })
 export class SharedModule {}
