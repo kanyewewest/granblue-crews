@@ -15,6 +15,7 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
 import { IconSearchComponent } from './icon-search/icon-search.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { CardSearchComponent } from './card/card-search.component';
+import { IconFilterComponent } from './icon-filter/icon-filter.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CardSearchComponent } from './card/card-search.component';
     IconSearchComponent,
     SearchbarComponent,
     CardSearchComponent,
+    IconFilterComponent,
   ],
   imports: [CommonModule, HttpClientModule, ReactiveFormsModule, RouterModule],
   exports: [LayoutComponent, BadgeComponent, CardSearchComponent],
