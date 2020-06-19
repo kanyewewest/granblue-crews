@@ -1,0 +1,34 @@
+<form [formGroup]="filtersForm">
+  <div class="fx-row-wrapper">
+    <div class="fx-row-parent fx-row-space-2">
+      <div class="fx-row-child form-group">
+        <label>
+          Average Rank
+        </label>
+        <div>
+          <input type="number" placeholder="0" formControlName="rankMin" />
+          to
+          <input type="number" placeholder="0" formControlName="rankMax" />
+        </div>
+      </div>
+      <div class="fx-row-child form-group">
+        <label>
+          Amount Members
+        </label>
+        <div>
+          <input type="number" placeholder="0" formControlName="membersMin" />
+          to
+          <input type="number" placeholder="0" formControlName="membersMax" />
+        </div>
+      </div>
+      <div class="fx-row-child form-group">
+        <label>Discord</label>
+        <input type="checkbox" formControlName="hasDiscord" />
+      </div>
+      <div class="fx-row-child form-group">
+        <label>Twitter</label>
+        <input type="checkbox" formControlName="hasTwitter" />
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,7 +1,12 @@
-<div class="gutter-vertical-2">
+<div class="gutter-vertical-3">
   <header>
-    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <form
+      class="gutter-vertical-2"
+      [formGroup]="filtersForm"
+      (ngSubmit)="onSubmit()"
+    >
       <app-searchbar formControlName="search"></app-searchbar>
+      <ng-template filterHost></ng-template>
       <button type="submit" hidden></button>
     </form>
   </header>

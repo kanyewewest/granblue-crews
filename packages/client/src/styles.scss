@@ -10,6 +10,7 @@ html {
 
 * {
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
@@ -79,4 +80,39 @@ img.emoji {
   width: 1em;
   margin: 0 0.05em 0 0.1em;
   vertical-align: -0.1em;
+}
+
+.form-group {
+  @extend .gutter-vertical-1;
+  font-size: var(--font-size-5);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-txt-accent);
+
+  label {
+    display: block;
+  }
+  input {
+    padding: var(--space-1);
+    background-color: var(--color-bg-sub);
+    border: none;
+    border-radius: var(--border-radius-08);
+    color: var(--color-txt-main);
+    font-size: var(--font-size-5);
+
+    &::placeholder {
+      color: var(--color-txt-sub);
+      font-size: var(--font-size-5);
+    }
+  }
+
+  input[type='number'] {
+    width: 7rem;
+    text-align: right;
+  }
+  input[type='checkbox'] {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 }

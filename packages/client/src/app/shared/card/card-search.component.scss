@@ -1,3 +1,11 @@
-app-card-list {
+header {
+  margin: var(--space-0) calc(var(--item-margin) / 2);
+}
+app-card-list,
+app-searchbar {
   display: block;
+}
+
+app-searchbar {
+  margin-bottom: var(--space-1);
 }

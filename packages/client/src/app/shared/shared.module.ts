@@ -16,6 +16,7 @@ import { IconSearchComponent } from './icon-search/icon-search.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { CardSearchComponent } from './card/card-search.component';
 import { IconFilterComponent } from './icon-filter/icon-filter.component';
+import { FilterHostDirective } from './card/filter-host.directive';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { IconFilterComponent } from './icon-filter/icon-filter.component';
     SearchbarComponent,
     CardSearchComponent,
     IconFilterComponent,
+    FilterHostDirective,
   ],
   imports: [CommonModule, HttpClientModule, ReactiveFormsModule, RouterModule],
   exports: [LayoutComponent, BadgeComponent, CardSearchComponent],

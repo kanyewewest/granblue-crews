@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Component, ComponentFactoryResolver, ViewChild } from '@angular/core';
 import { CardService } from 'src/app/core/services/card.service';
+import { FilterHostDirective } from './filter-host.directive';
+import { FilterFormComponent } from 'src/app/core/components/filter-form.component';
 
 @Component({
   selector: 'app-card-search',
@@ -8,12 +9,25 @@ import { CardService } from 'src/app/core/services/card.service';
   styleUrls: ['./card-search.component.scss'],
 })
 export class CardSearchComponent {
-  searchForm = this.fb.group({
-    search: [''],
-  });
-  constructor(private fb: FormBuilder, private cardService: CardService) {}
+  @ViewChild(FilterHostDirective, { static: true })
+  filterHost: FilterHostDirective;
+  filtersForm = this.cardService.filtersForm;
+
+  constructor(
+    private cardService: CardService,
+    private cf: ComponentFactoryResolver,
+  ) {}
 
   onSubmit() {
-    this.cardService.search(this.searchForm.value);
+    this.cardService.search();
+  }
+  ngOnInit(): void {
+    const componentFactory = this.cf.resolveComponentFactory(
+      this.cardService.filterFormComponent,
+    );
+    const component = this.filterHost.viewContainerRef.createComponent<
+      FilterFormComponent
+    >(componentFactory);
+    component.instance.filtersForm = this.filtersForm;
   }
 }
